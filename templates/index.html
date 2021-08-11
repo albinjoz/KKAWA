@@ -1,0 +1,21 @@
+
+
+{% load socialaccount %}
+<html>
+<body>
+
+<h1>Signing with  </h1>
+
+{% if user.is_authenticated %}
+  <p>Welcome, You are logged in as {{ user.username }}</p>
+{% else %}
+
+<button><a href="{% provider_login_url 'google' %}"> Google</a></button>
+<button><a href="{% provider_login_url 'facebook' %}">Facebook</a></button>
+{% endif %}
+
+
+</body>
+</html>
+
+
